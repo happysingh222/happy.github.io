@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Kaushan+Script&display=swap"
+        rel="stylesheet">
+    <title>Birthday</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* background: rgb(250, 211, 211); */
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        background: url('/tt.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.4;
+    }
+
+    .wavy {
+
+        position: absolute;
+        top: 30px;
+        -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    }
+
+    .wavy span {
+        font-family: 'Kaushan Script', cursive;
+        position: relative;
+        display: inline-block;
+        color: rgb(209, 4, 209);
+        /* font-weight: bold; */
+        font-size: 4.2em;
+        animation: animate 1.5s ease-in-out infinite;
+        animation-delay: calc(0.1s * var(--i));
+        /* font-style for wave text */
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(0px);
+
+        }
+
+        20% {
+            transform: translateY(-20px);
+
+        }
+
+        40%,
+        100% {
+            transform: translateY(0px);
+
+        }
+
+    }
+
+    .clr {
+        position: absolute;
+        top: 151px;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        color: rgb(3, 0, 165);
+        font-size: 2.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+
+    }
+
+    h1 span {
+        font-family: 'Acme', sans-serif;
+        display: table-cell;
+        /* font-weight: bold; */
+        margin: 0;
+        padding: 2px;
+        /* font-style for glow text */
+
+        /* animation: animate2 2s linear infinite; */
+    }
+
+    h1 span:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    h1 span:nth-child(2) {
+        animation-delay: 0.25s;
+    }
+
+    h1 span:nth-child(3) {
+        animation-delay: 0.5s;
+    }
+
+    h1 span:nth-child(4) {
+        animation-delay: 0.7s;
+    }
+
+    h1 span:nth-child(5) {
+        animation-delay: 0.9s;
+    }
+
+    h1 span:nth-child(6) {
+        animation-delay: 1s;
+    }
+
+    h1 span:nth-child(7) {
+        animation-delay: 1.20s;
+    }
+
+    h1 span:nth-child(8) {
+        animation-delay: 1.40s;
+    }
+
+    @keyframes animate2 {
+
+        0%,
+        100% {
+            color: #fff;
+            filter: blur(2px);
+            text-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff, 0 0 40px #00b3ff,
+                0 0 80px #00b3ff, 0 0 120px #00b3ff,
+                0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+
+        }
+
+        5%,
+        95% {
+            color: #111;
+            filter: blur(0px);
+            text-shadow: 0 0 10px none,
+        }
+
+    }
+
+    .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: animate3 20s linear infinite;
+    }
+
+    @keyframes animate3 {
+        0% {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        100% {
+            transform: perspective(1000px) rotateY(360deg);
+        }
+    }
+
+    .box span {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+        /* -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004); */
+    }
+
+    .box span img {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 35px;
+    }
+
+    section {
+        padding: 200px;
+    }
+
+    .text {
+        position: absolute;
+        color: white;
+        top: 245px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: animate4 1.2s linear infinite;
+    }
+
+    @keyframes animate4 {
+        0% {
+            color: rgb(255, 182, 182);
+        }
+
+        20% {
+            color: rgb(246, 75, 103);
+        }
+
+        40% {
+            color: rgb(0, 23, 155);
+        }
+
+        60% {
+            color: rgb(255, 255, 38);
+        }
+
+        80% {
+            color: rgb(245, 11, 194);
+        }
+
+        100% {
+            color: green;
+        }
+    }
+
+    .text h4 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    @media screen and (max-width:650px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+
+        .wavy span {
+            font-size: 1.8em;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        .box span {
+            top: 134px;
+        }
+
+        .clr {
+            top: 105px;
+        }
+
+        .text {
+            top: 177px;
+            padding: 10px;
+        }
+
+        .text h4 {
+            font-size: 1em;
+        }
+
+        .box span img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        section {
+            padding: 0px;
+        }
+
+
+
+    }
+
+    @media screen and (max-width:400px) {
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+        }
+
+        section {
+            padding: 0px;
+        }
+    }
+</style>
+
+<body>
+    <div class="wavy">
+        <span style="--i:1">H</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">p</span>
+        <span style="--i:4">p</span>
+        <span style="--i:5">y</span>
+        <span style="--i:6"> &nbsp; </span>
+        <span style="--i:7"></span>
+        <span style="--i:8">B</span>
+        <span style="--i:9">i</span>
+        <span style="--i:10">r</span>
+        <span style="--i:11">t</span>
+        <span style="--i:12">h</span>
+        <span style="--i:13">d</span>
+        <span style="--i:14">a</span>
+        <span style="--i:15">y</span>
+    </div>
+    <div class="text">
+        <h4> 🎂🎂✨✨ So you are 20 and your teenage ends here !! But I know that you will behave as a teen girl for the
+            rest of your life. !! 🎆🎆<br> #Rip english 😂😂😂</h4>
+    </div>
+    <div class="clr">
+        <h1>
+            <span style="--i:1">P</span>
+            <span style="--i:2">R</span>
+            <span style="--i:3">I</span>
+            <span style="--i:4">Y </span>
+            <span style="--i:5">A</span>
+            <span style="--i:6"> &nbsp; </span>
+            <span style="--i:7">S</span>
+            <span style="--i:8">I</span>
+            <span style="--i:9">N</span>
+            <span style="--i:10">G</span>
+            <span style="--i:11">H</span>
+            <span style="--i:12">!</span>
+            <span style="--i:13">!</span>
+
+
+        </h1>
+    </div>
+    <section>
+        <div class="box">
+
+            <span style="--i:1"><img src="p1.jpg" alt="just a click"></span>
+            <span style="--i:2"><img src="p2.jpg" alt="just a click"></span>
+            <span style="--i:3"><img src="p3.jpg" alt="just a click"></span>
+            <span style="--i:4"><img src="p4.jpg" alt="just a click"></span>
+            <span style="--i:5"><img src="p5.jpg" alt="just a click"></span>
+            <span style="--i:6"><img src="p6.jpg" alt="just a click"></span>
+            <span style="--i:7"><img src="p7.jpg" alt="just a click"></span>
+            <span style="--i:8"><img src="p8.jpg" alt="just a click"></span>
+            <span style="--i:9"><img src="p9.jpg" alt="just a click"></span>
+            <span style="--i:10"><img src="p10.jpg" alt="just a click"></span>
+            <span style="--i:11"><img src="p11.jpg" alt="just a click"></span>
+        </div>
+    </section>
+</body>
+
+
+</html>
